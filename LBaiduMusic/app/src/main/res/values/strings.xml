@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LBaiduMusic</string>
+    <string name="fragment_my_login_top">立即登录</string>
+    <string name="fragment_my_login_bottom">收藏歌曲永不丢失</string>
+    <string name="fragment_my_optional">随便听听</string>
+    <string name="fragment_my_mymusic">本地音乐</string>
+    <string name="fragment_my_lately">最近播放</string>
+    <string name="fragment_my_download">我的下载</string>
+    <string name="fragment_my_mysonglist">自建歌单</string>
+    <string name="fragment_my_mysonglist_right">新建</string>
+    <string name="fragment_my_favorite_above">我最喜欢的单曲</string>
 </resources>

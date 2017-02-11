@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorMainTabText">#b2d2f1</color>
+    <color name="colorMainTabSelected">#FFFFFF</color>
+    <color name="colorIncludeBackground">#20ACFE</color>
+    <color name="colorFragmentMyLoginText">#FFFFFF</color>
+    <color name="colorFragmentMymyText">#c7c3c3</color>
 </resources>

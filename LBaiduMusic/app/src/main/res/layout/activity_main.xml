@@ -5,26 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.a3g.lanou.lbaidumusic.activity.MainActivity">
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_main_activity"
+    <FrameLayout
+        android:id="@+id/frame_layout_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <RelativeLayout
+    <LinearLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="@dimen/activity_main_player_height">
+
         <ImageView
-            android:id="@+id/iv_main_icon"
-            android:layout_width="70dp"
+            android:id="@+id/iv_icon_main"
+            android:layout_weight="4"
+            android:layout_width="0dp"
             android:scaleType="fitXY"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            android:layout_weight="12"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_main_player_text_padding"
+            android:paddingRight="@dimen/activity_main_player_text_paddingright"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_song_name_main"
+                android:layout_marginTop="@dimen/activity_main_player_text_padding"
+                android:layout_marginLeft="@dimen/activity_main_player_text_padding"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_main_player_text_height" />
+            <TextView
+                android:id="@+id/tv_singer_name_main"
+                android:layout_marginLeft="@dimen/activity_main_player_text_padding"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_main_player_text_height" />
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_play_main"
+            android:layout_weight="3"
+            android:layout_width="0dp"
             android:layout_height="match_parent" />
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></RelativeLayout>
+        <ImageView
+            android:src="@mipmap/bt_minibar_next_normal"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:src="@mipmap/bt_minibar_playinglist_normal"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
 
-
-
-
-    </RelativeLayout>
+    </LinearLayout>
     
 </RelativeLayout>

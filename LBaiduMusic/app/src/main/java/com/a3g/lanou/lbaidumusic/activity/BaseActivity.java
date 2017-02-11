@@ -27,5 +27,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     protected abstract void bindEvent();
 
+    protected  <T extends View> T bindView(int resId){
+
+        return (T) findViewById(resId);
+    }
 
 }
