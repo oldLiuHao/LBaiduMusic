@@ -45,7 +45,8 @@
 
                     <TextView
                         style="@style/fragment_my_login_text"
-                        android:text="@string/fragment_my_login_bottom" />
+                        android:text="@string/fragment_my_login_bottom"
+                        android:id="@+id/textView2" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -148,15 +149,15 @@
 
             <TextView
                 android:id="@+id/tv_download_my_fragment"
-                android:layout_toRightOf="@id/iv_download_my_fragment"
                 style="@style/fragment_my_my_text_first"
+                android:layout_toRightOf="@id/iv_download_my_fragment"
                 android:text="@string/fragment_my_download" />
 
             <TextView
-                android:layout_toRightOf="@id/tv_download_my_fragment"
                 android:id="@+id/tv_download_number_myFragment"
                 style="@style/fragment_my_my_text_second"
                 android:layout_marginLeft="@dimen/fragment_my_mymusic_margin_left"
+                android:layout_toRightOf="@id/tv_download_my_fragment"
                 android:text="0首" />
 
             <ImageView
@@ -173,80 +174,129 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-            <TextView
-                android:text="@string/fragment_my_mysonglist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/fragment_my_mymusic_margin_left"
-                android:layout_alignParentBottom="true"
-                />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="@string/fragment_my_mysonglist_right"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/fragment_my_mymusic_margin_left"
+                android:text="@string/fragment_my_mysonglist" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/fragment_my_lately_image_right_margin_right"
-                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize"
+                android:text="@string/fragment_my_mysonglist_right"
                 android:textColor="@color/colorFragmentMymyText"
-                />
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2">
+
             <ImageView
                 android:id="@+id/iv_favorite_my_fragmet"
-                android:src="@mipmap/ic_mymusic_like"
                 style="@style/fragment_my_my_image"
-                 />
+                android:src="@mipmap/ic_mymusic_like" />
+
             <LinearLayout
-                android:layout_toRightOf="@id/iv_favorite_my_fragmet"
-                android:layout_marginLeft="@dimen/fragment_my_favorite_text_margin_left"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:orientation="vertical"
-                >
+                android:layout_marginLeft="@dimen/fragment_my_favorite_text_margin_left"
+                android:layout_toRightOf="@id/iv_favorite_my_fragmet"
+                android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/fragment_my_favorite_above"
-                    />
+                    android:text="@string/fragment_my_favorite_above" />
+
                 <TextView
                     android:id="@+id/tv_favorite_number_my_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorFragmentMymyText"
                     android:text="0首"
-                    />
-
+                    android:textColor="@color/colorFragmentMymyText" />
 
 
             </LinearLayout>
+
             <ImageView
                 android:layout_width="@dimen/fragment_my_favorite_image_width"
                 android:layout_height="@dimen/fragment_my_favorite_image_width"
-                android:src="@mipmap/btn_more_left_arrow_nor"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/fragment_my_lately_image_right_margin_right"
-                />
+                android:src="@mipmap/btn_more_left_arrow_nor" />
 
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.5"></LinearLayout>
+            android:layout_weight="2.5">
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/tv_collect_my_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_my_mymusic_margin_left"
+                android:layout_marginTop="@dimen/fragment_my_collect_text_margin_top"
+                android:text="@string/fragment_my_collect" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/tv_collect_my_fragment"
+                android:layout_below="@id/tv_collect_my_fragment"
+                android:layout_marginRight="@dimen/fragment_my_lately_image_right_margin_right"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/fragment_my_collect_list"
+                    android:text="@string/fragment_my_collect_list"
+                    />
+                <TextView
+                    style="@style/fragment_my_collect_list"
+                    android:text="@string/fragment_my_collect_special"
+                    />
+                <TextView
+                    style="@style/fragment_my_collect_list"
+                    android:text="@string/fragment_my_collect_singer"
+                    />
+                <TextView
+                    style="@style/fragment_my_collect_list"
+                    android:text="@string/fragment_my_collect_article"
+                    />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"></LinearLayout>
+            android:layout_weight="1.5">
+            <TextView
+                android:id="@+id/tv_login_parent_bottom_my_fragment"
+                android:drawableLeft="@mipmap/icon_tips_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/fragment_my_login_liner_bottom_margin_top"
+                android:text="@string/fragment_my_login_parent_bottom"
+                android:textColor="@color/colorFragmentMymyText"
+                />
+
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

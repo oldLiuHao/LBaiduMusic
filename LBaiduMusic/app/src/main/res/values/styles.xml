@@ -12,7 +12,6 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/colorFragmentMyLoginText</item>
     </style>
     <style name = "fragment_my_my_text_second">
@@ -41,4 +40,13 @@
        <item name="android:layout_alignParentRight">true</item>
        <item name="android:layout_centerVertical">true</item>
    </style>
+    <style name="fragment_my_collect_list">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/fragment_my_login_LinerLayout_textSize</item>
+        <item name="android:textColor">@color/colorFragmentMymyText</item>
+        <item name="android:gravity">center</item>
+
+    </style>
 </resources>

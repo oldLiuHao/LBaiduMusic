@@ -7,5 +7,5 @@
     <color name="colorMainTabSelected">#FFFFFF</color>
     <color name="colorIncludeBackground">#20ACFE</color>
     <color name="colorFragmentMyLoginText">#FFFFFF</color>
-    <color name="colorFragmentMymyText">#c7c3c3</color>
+    <color name="colorFragmentMymyText">#aba8a8</color>
 </resources>

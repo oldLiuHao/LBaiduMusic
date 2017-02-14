@@ -9,4 +9,13 @@
     <string name="fragment_my_mysonglist">自建歌单</string>
     <string name="fragment_my_mysonglist_right">新建</string>
     <string name="fragment_my_favorite_above">我最喜欢的单曲</string>
+    <string name="fragment_my_collect">我的收藏</string>
+    <string name="fragment_my_collect_list">歌单</string>
+    <string name="fragment_my_collect_special">专辑</string>
+    <string name="fragment_my_collect_singer">歌手</string>
+    <string name="fragment_my_collect_article">文章</string>
+    <string name="fragment_my_login_parent_bottom">立即登录，让音乐跟着你走</string>
+    <string name="fragment_song_list_all">全部</string>
+    <string name="fragment_song_list_hot">最热</string>
+    <string name="fragment_song_list_new">最新</string>
 </resources>
