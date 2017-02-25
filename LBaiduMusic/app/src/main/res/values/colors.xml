@@ -8,4 +8,7 @@
     <color name="colorIncludeBackground">#20ACFE</color>
     <color name="colorFragmentMyLoginText">#FFFFFF</color>
     <color name="colorFragmentMymyText">#aba8a8</color>
+    <color name="colorDefaultTextView">#484848</color>
+    <color name="colorktvbackground">#e4e3e3</color>
+    <color name="colorfindlivetext">#eceaea</color>
 </resources>

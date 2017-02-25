@@ -1,15 +1,441 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none">
 
-    <TextView
-        android:layout_marginTop="50dp"
-        android:textSize="30sp"
-        android:text="推荐"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <com.youth.banner.Banner
+            android:id="@+id/banner_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            app:indicator_width="2dp"
+            />
 
-</LinearLayout>
+        <GridView
+            android:id="@+id/gird_singer_recommend"
+            android:numColumns="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/lila_adv_recommend"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+
+            >
+            <ImageView
+                android:id="@+id/iv_adv_recommend"
+                android:layout_gravity="center"
+                android:layout_width="120dp"
+                android:layout_height="100dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                >
+                <TextView
+                    android:id="@+id/tv_name_adv_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_author_adv_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="@color/colorFragmentMymyText"
+                    android:textSize="12sp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_recommend_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_recommend_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_recommend_recommend" />
+
+            <TextView
+                android:id="@+id/tv_more_recommend_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gird_recommend_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:numColumns="3"
+            android:horizontalSpacing="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_new_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_new_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_new_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gird_new_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:numColumns="3"
+            android:horizontalSpacing="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_hot_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_hot_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_hot_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gird_hot_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:numColumns="3"
+            android:horizontalSpacing="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_radio_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_radio_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_radio_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+            <ImageView
+                android:src="@mipmap/radio_one"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:src="@mipmap/redio_two"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:src="@mipmap/redio_three"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:src="@mipmap/redio_four"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_today_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_today_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_today_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+        <ListView
+            android:id="@+id/list_today_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_original_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_original_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_original_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+        <GridView
+            android:id="@+id/gird_original_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:numColumns="3"
+            android:horizontalSpacing="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_mv_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_mv_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_mv_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+        <GridView
+            android:id="@+id/gird_mv_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:numColumns="3"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:horizontalSpacing="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_happy_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_happy_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_happy_recommend" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:drawableRight="@mipmap/btn_more_left_arrow_nor"
+                android:gravity="center_vertical"
+                android:text="更多"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
+
+        </RelativeLayout>
+        <GridView
+            android:id="@+id/gird_happy_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:numColumns="3"
+            android:horizontalSpacing="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/iv_special_recommend"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_special_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_special_recommend" />
+
+        </RelativeLayout>
+        <ListView
+            android:id="@+id/list_special_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            />
+    </LinearLayout>
+</ScrollView>

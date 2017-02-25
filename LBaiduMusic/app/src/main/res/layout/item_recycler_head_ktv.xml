@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_first_ktv"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorktvbackground"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F9F9F9"
+            >
+        <ImageView
+            android:id="@+id/iv_my_ktv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/icon_my_ktv" />
+
+        <TextView
+            android:text="@string/fragment_ktv_my_ktv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_my_ktv" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/icon_to_my_ktv" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:paddingTop="10dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/lila_chinese_ktv"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/img_k_chinese" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/fragment_ktv_chinese" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lila_hot_ktv"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@id/lila_chinese_ktv"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/img_k_ktv" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/fragment_ktv_ktv_hot"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lila_europe_ktv"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/lila_chinese_ktv"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/img_k_occident" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/fragment_ktv_europe"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:paddingBottom="10dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/lila_women_ktv"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/img_k_woman" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/fragment_ktv_women_singer"
+                android:gravity="center_horizontal"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lila_man_ktv"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@id/lila_women_ktv"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/img_k_man" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/fragment_ktv_man_singer"
+                android:gravity="center_horizontal"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lila_bind_ktv"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@id/lila_women_ktv"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/img_k_band" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/fragment_ktv_band"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        >
+        <ImageView
+            android:src="@mipmap/bt_startpage_bg_press"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="大家都在唱"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+</LinearLayout>
+</LinearLayout>

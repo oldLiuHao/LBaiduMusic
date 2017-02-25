@@ -77,6 +77,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rela_local_my_fragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2">
@@ -94,10 +95,10 @@
                 android:text="@string/fragment_my_mymusic" />
 
             <TextView
-                android:id="@+id/tv_myMusic_number_myFragment"
+                android:id="@+id/tv_my_music_number_myFragment"
                 style="@style/fragment_my_my_text_second"
                 android:layout_toRightOf="@id/tv_myMusic_my_fragment"
-                android:text="0首" />
+                />
 
             <ImageView
                 style="@style/fragment_my_my_image_right"

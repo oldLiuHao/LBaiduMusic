@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/fragment_song_list_grid_width"
+    android:layout_width="match_parent"
     android:layout_height="@dimen/fragment_song_list_grid_height"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/fragment_song_recycler_head_song_list_padding"
+    android:paddingRight="@dimen/fragment_song_recycler_head_song_list_padding"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:textColor="@color/colorFragmentMyLoginText"
+               android:textSize="12sp"
                 />
 
             <ImageView

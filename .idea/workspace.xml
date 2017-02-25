@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa76fc56-5e3d-4dda-93ee-a9da7e96b0f0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/build.gradle" afterPath="$PROJECT_DIR$/LBaiduMusic/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/java/com/a3g/lanou/lbaidumusic/fragment/MusicFragment.java" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/java/com/a3g/lanou/lbaidumusic/fragment/MusicFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/java/com/a3g/lanou/lbaidumusic/fragment/MyFragment.java" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/java/com/a3g/lanou/lbaidumusic/fragment/MyFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/layout/fragment_music.xml" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/layout/fragment_music.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/layout/fragment_my.xml" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/layout/fragment_my.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/LBaiduMusic/app/src/main/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LBaiduMusic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +45,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -68,6 +60,9 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -76,55 +71,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LBaiduMusic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,7 +183,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="976" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="976" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

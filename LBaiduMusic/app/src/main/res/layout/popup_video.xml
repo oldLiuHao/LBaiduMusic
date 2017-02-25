@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/lila_transparent_song_list_all"
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="#b0000000"
+        >
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/colorFragmentMyLoginText">
+        <TextView
+            android:gravity="center"
+            android:text="@string/fragment_song_list_all_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_song_list_pop_item_height"
+            />
+        <TextView
+            android:text="@string/fragment_video_all_list_all"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_song_list_pop_item_height" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_song_list_pop_item_height"
+            android:orientation="horizontal"
+            >
+
+
+            <ImageView
+                android:src="@mipmap/bt_startpage_bg_press"
+                android:layout_width="@dimen/fragment_song_list_left_image_width"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_song_list_pop_item_margin"
+                />
+            <TextView
+                android:text="@string/fragment_video_all_list_title"
+                android:id="@+id/tv_titile_pop_video"
+                android:layout_marginLeft="@dimen/fragment_song_list_pop_item_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_song_list_pop_item_height"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/fragment_video_all_list_hinterland"
+                />
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/fragment_video_all_list_HongKong"
+                />
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/fragment_video_all_list_Europe"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_song_list_pop_item_height"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/fragment_video_all_list_Jap"
+                />
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/fragment_video_all_list_Korea"
+                />
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/fragment_video_all_list_Live"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
