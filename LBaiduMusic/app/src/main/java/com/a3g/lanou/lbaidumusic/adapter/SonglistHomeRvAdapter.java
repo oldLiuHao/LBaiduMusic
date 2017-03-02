@@ -7,10 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import com.a3g.lanou.lbaidumusic.R;
 import com.a3g.lanou.lbaidumusic.bean.SongListHotBean;
+import com.a3g.lanou.lbaidumusic.fragment.localFragments.SonglistLocalFragment;
+import com.a3g.lanou.lbaidumusic.fragment.musicFragments.SongListFragment;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class SonglistHomeRvAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     private final int HEAD_TYPE =0;
     private final int FOOT_TYPE = 1;
+    private SongListFragment songListFragment;
     private Context context;
     private List<SongListHotBean.DiyInfoBean> datas;
     class HeadHoler extends RecyclerView.ViewHolder{
@@ -37,8 +39,9 @@ public class SonglistHomeRvAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
     }
 
-    public SonglistHomeRvAdapter(Context context) {
-        this.context = context;
+    public SonglistHomeRvAdapter(SongListFragment songListFragment) {
+        this.songListFragment = songListFragment;
+        context = songListFragment.getContext();
     }
 
     public void setDatas(List<SongListHotBean.DiyInfoBean> datas) {
@@ -71,7 +74,7 @@ public class SonglistHomeRvAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         int type = getItemViewType(position);
         if (type == HEAD_TYPE){
             HeadHoler headHoler = (HeadHoler) holder;
-            SongListGirdAdapter adapter = new SongListGirdAdapter(context);
+            SongListGirdAdapter adapter = new SongListGirdAdapter(songListFragment);
             headHoler.recyclerView.setLayoutManager(new GridLayoutManager(context,2, LinearLayoutManager.VERTICAL,false));
 
             headHoler.recyclerView.setAdapter(adapter);

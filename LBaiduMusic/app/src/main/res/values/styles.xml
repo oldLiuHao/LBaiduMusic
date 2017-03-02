@@ -54,4 +54,5 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/fragment_song_list_name_text_textsize</item>
     </style>
+
 </resources>

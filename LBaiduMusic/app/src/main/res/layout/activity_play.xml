@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/lila_play_activity"
+    >
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:background="@mipmap/jt1"
         >
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_activity_play"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#82c2c1c1"
+            />
         <ImageView
+            android:layout_marginTop="10dp"
             android:id="@+id/iv_back_play_activity"
             android:layout_marginLeft="10dp"
             android:src="@mipmap/bt_playpage_button_return_normal_new"
@@ -24,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
+        android:background="#abb4b3b3"
         >
         <ImageView
             android:src="@mipmap/bt_playpage_button_like_normal_new"
@@ -46,59 +51,83 @@
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <ImageView
+            android:layout_gravity="center"
             android:src="@mipmap/bt_recsong_more_press"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_weight="0.8"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
+        android:background="#abb4b3b3"
         >
         <TextView
+            android:layout_marginLeft="10dp"
+            android:text="00:00"
+            android:id="@+id/tv_time_now"
             android:gravity="center_vertical"
-            android:layout_width="30dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent" />
+
         <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/sb_play"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:maxHeight="5px"
+            android:minHeight="5px"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@mipmap/detail_icon_schedule_ball"
+            />
+
         <TextView
+            android:text="00：00"
+            android:id="@+id/tv_time_all"
             android:gravity="center_vertical"
-            android:layout_width="30dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="#abb4b3b3"
         >
         <ImageView
+            android:id="@+id/iv_mode_play"
             android:src="@mipmap/bt_playpage_loop_normal_new"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_last_play"
             android:src="@mipmap/bt_playpage_button_previous_normal_new"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_play_play"
             android:src="@mipmap/bt_playpage_button_play_normal_new"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_next_play"
             android:src="@mipmap/bt_playpage_button_next_normal_new"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
         <ImageView
+            android:id="@+id/iv_menu_play"
             android:src="@mipmap/bt_playpage_button_list_normal_new"
             android:layout_weight="1"
             android:layout_width="0dp"

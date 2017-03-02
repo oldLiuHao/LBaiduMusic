@@ -65,6 +65,7 @@ public class RecommendFragment extends BaseFragment implements OnBannerClickList
     private static final String TAG = "RecommendFragment";
     private Intent intent;
     private Bundle bundle;
+    private FragmentManager fragmentManager;
 
     @Override
     protected int bindLayout() {
@@ -120,6 +121,7 @@ public class RecommendFragment extends BaseFragment implements OnBannerClickList
 
     @Override
     protected void initData() {
+        fragmentManager = getActivity().getSupportFragmentManager();
         recommendNet();
         tvMoreRecommend.setOnClickListener(this);
     }
@@ -156,7 +158,7 @@ public class RecommendFragment extends BaseFragment implements OnBannerClickList
                     Glide.with(MyApp.getContext()).load(recommendBean.getResult().getMix_2().getResult().get(0).getPic()).into(ivAdv);
                 tvNameAdv.setText(recommendBean.getResult().getMix_2().getResult().get(0).getTitle());
                     tvAuthorAdv.setText(recommendBean.getResult().getMix_2().getResult().get(0).getDesc());
-                }else lilaAdv.setVisibility(View.INVISIBLE);
+                }else lilaAdv.setVisibility(View.GONE);
 
 
                 Glide.with(MyApp.getContext()).load(recommendBean.getModule().get(3).getPicurl()).into(ivRecommend);
@@ -280,7 +282,7 @@ public class RecommendFragment extends BaseFragment implements OnBannerClickList
         switch (parent.getId()){
             case R.id.gird_recommend_recommend:
 
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.add(R.id.frame_layout_main,PlaySongListFragment.newInstance(
                         recommendBean.getResult().getDiy().getResult().get(position).getListid()));

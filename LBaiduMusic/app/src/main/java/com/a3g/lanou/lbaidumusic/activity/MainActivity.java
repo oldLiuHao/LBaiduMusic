@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -17,10 +19,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.a3g.lanou.lbaidumusic.R;
+import com.a3g.lanou.lbaidumusic.bean.EventONLineSongs;
+import com.a3g.lanou.lbaidumusic.bean.OnLineSongBean;
 import com.a3g.lanou.lbaidumusic.bean.SongBean;
 import com.a3g.lanou.lbaidumusic.fragment.LoginFragment;
 import com.a3g.lanou.lbaidumusic.fragment.MainFragment;
@@ -29,7 +35,13 @@ import com.a3g.lanou.lbaidumusic.myinterface.MusicInterface;
 import com.a3g.lanou.lbaidumusic.service.MediaPlayService;
 import com.a3g.lanou.lbaidumusic.tools.MyBean;
 import com.a3g.lanou.lbaidumusic.tools.MyUrl;
+import com.bumptech.glide.Glide;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,9 +59,13 @@ public class MainActivity extends BaseActivity implements MusicInterface {
     private boolean isAlive = true;
     private ArrayList<SongBean> localSongBeen;
     private static final String TAG = "MainActivity";
-
+    private List<OnLineSongBean> onLineSongBeanList;
+    private final int PLAY_ON_LINE = 1;
+    private final int PLAY_LOCAL = 2;
+    private ProgressBar progressBar;
     @Override
     protected int bindLayout() {
+        EventBus.getDefault().register(this);
         return R.layout.activity_main;
     }
 
@@ -62,6 +78,7 @@ public class MainActivity extends BaseActivity implements MusicInterface {
         ivNext = bindView(R.id.iv_next_main);
         ivMenu = (ImageView) findViewById(R.id.iv_menu_main);
         lilaPlay = (LinearLayout) findViewById(R.id.lila_play_main);
+        progressBar = (ProgressBar) findViewById(R.id.pb_main);
     }
 
     @Override
@@ -75,27 +92,31 @@ public class MainActivity extends BaseActivity implements MusicInterface {
         loginFragment = new LoginFragment();
 
         intent = new Intent(this, MediaPlayService.class);
-        //开辟一个子线程，在子线程中无限次循环，循环中要做的就是获得MediaPlayer播放的歌曲的总长度以及当前歌曲的播放进度
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (isAlive){
-//                    if (myBinder!=null&&myBinder.isPlaying()){
-//                        //获取值的过程可以在子线程操作
-//                        //但是更改UI的操作需要在主线程执行
-//                        //RunOnui方法，就可以调到主线程中执行run方法里面的内容
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//
-//                            }
-//                        });
-//
-//
-//                    }
-//                }
-//            }
-//        })
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (isAlive) {
+
+                    if (myBinder != null && myBinder.isPlaying()) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                progressBar.setMax(myBinder.getDu());
+                                progressBar.setProgress(myBinder.getCurrentProgress());
+
+                            }
+                        });
+
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        }).start();
         serviceConnection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
@@ -122,6 +143,7 @@ public class MainActivity extends BaseActivity implements MusicInterface {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
         unregisterReceiver(songReceiver);
         unbindService(serviceConnection);
     }
@@ -175,8 +197,6 @@ public class MainActivity extends BaseActivity implements MusicInterface {
             case R.id.lila_play_main:
                 if (!myBinder.isFirst()){
                     Intent toPlay = new Intent(this,PlayActivity.class);
-                    myBinder.getIndex();
-                    myBinder.getSongList();
                     startActivity(toPlay);
                 }
 
@@ -189,14 +209,47 @@ public class MainActivity extends BaseActivity implements MusicInterface {
         myBinder.play(position);
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void getOnLineSong(EventONLineSongs eventONLineSongs){
+
+        if (eventONLineSongs.getOnLineSongBeanList()!=null){
+            onLineSongBeanList = eventONLineSongs.getOnLineSongBeanList();
+            int position = eventONLineSongs.getPostion();
+            myBinder.playOnline(onLineSongBeanList,position);
+        }else {
+            myBinder.playOnline(eventONLineSongs.getPostion());
+        }
+
+
+    }
+
+
+
+
 
     class SongReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            SongBean songBean = intent.getParcelableExtra(MyBean.MY_SONG);
-            tvSongNameMain.setText(songBean.getSongName());
-            tvSingerMain.setText(songBean.getSingerName());
             ivPlayMain.setImageResource(R.mipmap.bt_minibar_pause_normal);
+            if(myBinder.getPlayWhere()==PLAY_LOCAL){
+                SongBean songBean = intent.getParcelableExtra(MyBean.MY_SONG);
+                tvSongNameMain.setText(songBean.getSongName());
+                tvSingerMain.setText(songBean.getSingerName());
+
+                if (songBean.getSongImage()==null){
+                    ivIconMain.setImageResource(R.mipmap.ic_aboutus_logo);
+                }
+                else {
+                    ivIconMain.setImageBitmap(songBean.getSongImage());
+                }
+            }else if (myBinder.getPlayWhere()==PLAY_ON_LINE){
+                OnLineSongBean onLineSongBean = intent.getParcelableExtra(MyBean.MY_SONG);
+                tvSongNameMain.setText(onLineSongBean.getSonginfo().getTitle());
+                tvSingerMain.setText(onLineSongBean.getSonginfo().getAuthor());
+                Glide.with(MainActivity.this).load(onLineSongBean.getSonginfo().getPic_premium()).into(ivIconMain);
+            }
+
+
 
         }
     }

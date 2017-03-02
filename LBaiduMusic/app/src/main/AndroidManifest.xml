@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.WebActivity"/>
+        <activity android:name=".activity.PlayActivity"/>
         <service android:name=".service.MediaPlayService"/>
     </application>
 

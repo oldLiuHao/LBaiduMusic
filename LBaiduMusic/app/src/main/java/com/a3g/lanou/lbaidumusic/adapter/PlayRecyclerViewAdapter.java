@@ -1,7 +1,9 @@
 package com.a3g.lanou.lbaidumusic.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.a3g.lanou.lbaidumusic.R;
 import com.a3g.lanou.lbaidumusic.bean.PlaySongListBean;
+import com.a3g.lanou.lbaidumusic.myinterface.RecyclerItemClickListener;
 import com.a3g.lanou.lbaidumusic.tools.MyViewHolder;
 
 /**
@@ -17,12 +20,14 @@ import com.a3g.lanou.lbaidumusic.tools.MyViewHolder;
  */
 public class PlayRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
+    private RecyclerItemClickListener recyclerItemClickListener;
     private PlaySongListBean playSongListBean;
     private static final int TYPE_HEAD = 0;
     private static final int TYPE_NORMAL = 1;
     private static final int LINE_NORMAL = 2;
     private static final int LINE_MAX = Integer.MAX_VALUE;
     private static int lines = LINE_NORMAL;
+    private static final String TAG = "PlayRecyclerViewAdapter";
     class HeadHolder extends RecyclerView.ViewHolder{
         private TextView textView;
         public HeadHolder(View itemView) {
@@ -30,7 +35,9 @@ public class PlayRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             textView = (TextView) itemView.findViewById(R.id.tv_head_list_play);
         }
     }
-    public PlayRecyclerViewAdapter(Context context) {
+
+    public PlayRecyclerViewAdapter(RecyclerItemClickListener recyclerItemClickListener, Context context) {
+        this.recyclerItemClickListener = recyclerItemClickListener;
         this.context = context;
     }
 
@@ -65,7 +72,7 @@ public class PlayRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 
             int type = getItemViewType(position);
           switch (type){
@@ -92,9 +99,18 @@ public class PlayRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                   });
                   break;
               case TYPE_NORMAL:
-                  MyViewHolder normalHolder  = (MyViewHolder) holder;
+                  final MyViewHolder normalHolder  = (MyViewHolder) holder;
                   normalHolder.setText(R.id.tv_song_name_item_play,playSongListBean.getContent().get(position-1).getTitle());
                   normalHolder.setText(R.id.tv_singer_item_play,playSongListBean.getContent().get(position-1).getAuthor());
+                  normalHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                      @Override
+                      public void onClick(View v) {
+                            recyclerItemClickListener.itemClick(position-1);
+                                notifyDataSetChanged();
+                                normalHolder.setTextColor(R.id.tv_song_name_item_play, context.getResources().getColor(R.color.colorIncludeBackground));
+                      }
+                  });
+
                   break;
           }
     }
@@ -102,5 +118,6 @@ public class PlayRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public int getItemCount() {
         return playSongListBean==null?0:(playSongListBean.getContent().size()+1);
+
     }
 }

@@ -21,8 +21,10 @@ public class MyUrl {
     public static final String RECOMMEDN_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?from=android&version=5.9.8.1&channel=xiaomi&operator=-1&method=baidu.ting.plaza.index&cuid=47D66EFD52506DAC7B0C3A27F3F441A2&focu_num=8";
 
 
-    public static final String PLAY_SONG_LIST_ABOVE_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=";
-    public static final String PLAY_SONG_LIST_BOTTOM_URL = "&version=5.2.3&from=ios&channel=appstore";
+    public static final String PLAY_SONG_LIST_HEAD_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=";
+    public static final String PLAY_SONG_LIST_FOOT_URL = "&version=5.2.3&from=ios&channel=appstore";
 
+    public static final String PLAY_HEAD_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?from=webapp_music&method=baidu.ting.song.play&format=json&callback=&songid=";
+    public static final String PLAY_FOOT_URL = "&_=1413017198449";
 
 }

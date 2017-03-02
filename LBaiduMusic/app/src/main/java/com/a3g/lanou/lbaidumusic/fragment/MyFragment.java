@@ -2,8 +2,11 @@ package com.a3g.lanou.lbaidumusic.fragment;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -97,15 +100,33 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
                 int isMusic = cursor.getInt(cursor.getColumnIndex(MediaStore.Audio.Media.IS_MUSIC));
                 //获取音乐时长
                 Long duringTime = cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION));
+                String Id=cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID));
+                int id=Integer.valueOf(Id);
+                String albumArt=getAlbumArt(id);
+
+                Bitmap bitmap = BitmapFactory.decodeFile(albumArt);
+
                 if(isMusic!=0&&duringTime/(60*1000)>1){
-                    SongBean songBean = new SongBean(title,singer,url);
+                    SongBean songBean = new SongBean(title,singer,url,bitmap,duringTime);
                     songBeen.add(songBean);
                 }
             }while (cursor.moveToNext());
-//            for (SongBean songBean:songBeen){
-//
-//            }
+
         }
         cursor.close();
     }
+
+    private String getAlbumArt(int Id) {
+        String mUriAlbums = "content://media/external/audio/albums";
+        String[] projection = new String[] { "album_art" };
+        Cursor cur =getActivity().getContentResolver().query(  Uri.parse(mUriAlbums + "/" + Integer.toString(Id)),  projection, null, null, null);
+        String album_art = null;
+        if (cur.getCount() > 0 && cur.getColumnCount() > 0)
+        {  cur.moveToNext();
+            album_art = cur.getString(0);
+        }
+        cur.close();
+        return album_art;
+    }
+
 }

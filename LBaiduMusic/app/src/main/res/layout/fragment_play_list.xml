@@ -16,21 +16,21 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:expandedTitleGravity="right|bottom"
             >
-
-                 <RelativeLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/iv_background_play"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     android:scaleType="fitXY"
                     />
-                  <TextView
-                      android:background="#ef9da6a7"
-                      android:layout_width="match_parent"
-                      android:layout_height="match_parent" />
-                 </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#bdc2c2c2"
+                        />
+                </RelativeLayout>
             <LinearLayout
                 android:layout_marginTop="60dp"
                 android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
-                android:layout_weight="4"/>
+                android:layout_weight="1"/>
             <TextView
                 android:layout_weight="1"
                 android:id="@+id/tv_include_play_list"
@@ -55,81 +55,7 @@
                 android:textColor="@color/colorFragmentMyLoginText"
                 />
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="#eaaeaeae"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    android:layout_marginBottom="50dp"
-                    >
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                        >
-                        <ImageView
-                            android:src="@mipmap/abc_btn_rating_star_off_mtrl_alpha"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <TextView
-                            android:layout_marginLeft="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:textColor="@color/colorFragmentMyLoginText"
-                            />
 
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                      android:gravity="center"
-                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                        >
-                        <ImageView
-                            android:src="@mipmap/icon_comment"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <TextView
-                            android:layout_marginLeft="10dp"
-                            android:text="评论"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:textColor="@color/colorFragmentMyLoginText"
-                            />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                        >
-                        <ImageView
-                            android:src="@mipmap/splash_ad_share"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <TextView
-                            android:layout_marginLeft="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:textColor="@color/colorFragmentMyLoginText"
-                            />
-
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
 
 
             </LinearLayout>
@@ -154,13 +80,19 @@
 
 
                     <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp"
                         android:id="@+id/tv_title_play_song_list"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:textColor="@color/colorFragmentMyLoginText"
+                        android:maxLines="1"
+                        android:layout_marginRight="20dp"
                         />
+
                     <ImageView
+                        android:layout_marginTop="5dp"
                         android:layout_marginRight="20dp"
                         android:src="@mipmap/bt_titlebar_setting_normal"
                         android:layout_width="wrap_content"
@@ -228,10 +160,12 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginLeft="10dp"
         android:id="@+id/recyler_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="@dimen/fragment_main_tab_height"
         />
 
 

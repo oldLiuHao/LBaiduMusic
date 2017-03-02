@@ -1,9 +1,12 @@
 package com.a3g.lanou.lbaidumusic.fragment.musicFragments;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -21,6 +24,7 @@ import com.a3g.lanou.lbaidumusic.bean.SongListHotBean;
 import com.a3g.lanou.lbaidumusic.fragment.BaseFragment;
 import com.a3g.lanou.lbaidumusic.myinterface.CallBack;
 import com.a3g.lanou.lbaidumusic.myinterface.RecyclerItemClickListener;
+import com.a3g.lanou.lbaidumusic.tools.MyBean;
 import com.a3g.lanou.lbaidumusic.tools.MyUrl;
 import com.a3g.lanou.lbaidumusic.tools.NetTool;
 
@@ -30,7 +34,7 @@ import java.util.List;
 /**
  * Created by liuHao on 17/2/13.
  */
-public class SongListFragment extends BaseFragment implements View.OnClickListener {
+public class SongListFragment extends BaseFragment implements View.OnClickListener, RecyclerItemClickListener{
 
     private RecyclerView rvHomeRecycler;
     private List<SongListHotBean.DiyInfoBean> datas;
@@ -41,6 +45,7 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
     private SongListAllRvAdtpter songListAllRvAdtpter;
     private RecyclerView rvPopupAll;
     private TextView tvHotSongList, tvNewSongList, tvAllSongList;
+    private FragmentManager fragmentManager;
 
     @Override
     protected int bindLayout() {
@@ -75,7 +80,9 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     protected void initData() {
-        songlistHomeRvAdapter = new SonglistHomeRvAdapter(getContext());
+        fragmentManager = getActivity().getSupportFragmentManager();
+
+        songlistHomeRvAdapter = new SonglistHomeRvAdapter(SongListFragment.this);
         rvHomeRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         rvHomeRecycler.setAdapter(songlistHomeRvAdapter);
         hotNet();
@@ -173,4 +180,11 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
     }
 
 
+    @Override
+    public void itemClick(int inPosition) {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.frame_layout_main,PlaySongListFragment.newInstance(datas.get(inPosition).getList_id()));
+        fragmentTransaction.commit();
+
+    }
 }

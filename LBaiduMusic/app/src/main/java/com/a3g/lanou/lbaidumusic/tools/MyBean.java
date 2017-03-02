@@ -9,7 +9,9 @@ public class MyBean {
     public static final String LOGIN_FRAGMENT = "login_fragment";
     public static final String TO_SONG_LIST = "to_song_list";
     public static final String MY_SONG = "my_song";
+    public static final String MY_ONLINE_SONG = "my_online_song";
     public static final String LOCAL_SONG = "local_song";
     public static final String PLAY_LOCAL_INDEX = "play_local_index";
+
 
 }

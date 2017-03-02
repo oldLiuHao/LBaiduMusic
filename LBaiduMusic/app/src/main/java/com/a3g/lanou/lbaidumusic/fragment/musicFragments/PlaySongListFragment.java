@@ -1,18 +1,22 @@
 package com.a3g.lanou.lbaidumusic.fragment.musicFragments;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.a3g.lanou.lbaidumusic.MyApp;
 import com.a3g.lanou.lbaidumusic.R;
 import com.a3g.lanou.lbaidumusic.adapter.PlayRecyclerViewAdapter;
+import com.a3g.lanou.lbaidumusic.bean.EventONLineSongs;
+import com.a3g.lanou.lbaidumusic.bean.OnLineSongBean;
 import com.a3g.lanou.lbaidumusic.bean.PlaySongListBean;
 import com.a3g.lanou.lbaidumusic.fragment.BaseFragment;
 import com.a3g.lanou.lbaidumusic.myinterface.CallBack;
@@ -21,16 +25,30 @@ import com.a3g.lanou.lbaidumusic.tools.MyBean;
 import com.a3g.lanou.lbaidumusic.tools.MyUrl;
 import com.a3g.lanou.lbaidumusic.tools.NetTool;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.google.gson.Gson;
+
+import net.qiujuer.genius.blur.StackBlur;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by liuHao on 17/2/22.
  */
-public class PlaySongListFragment extends BaseFragment implements View.OnClickListener {
+public class PlaySongListFragment extends BaseFragment implements View.OnClickListener, RecyclerItemClickListener {
     private String listID;
     private ImageView ivPlayBackground, ivCenter, ivBack;
     private TextView tvInclude, tvTitle, tvNumber;
     private PlayRecyclerViewAdapter playRecyclerViewAdapter;
     private RecyclerView recyclerView;
+    private PlaySongListBean playSongListBean;
+    private boolean isClick = false;
+    private static final String TAG = "PlaySongListFragment";
+    private List<OnLineSongBean> onLineSongBeanList;
 
     @Override
     protected int bindLayout() {
@@ -56,21 +74,30 @@ public class PlaySongListFragment extends BaseFragment implements View.OnClickLi
         Bundle bundle = getArguments();
         listID = bundle.getString(MyBean.TO_PLAY_SONG_lIST);
 
-        NetTool.getInstance().startRequset(MyUrl.PLAY_SONG_LIST_ABOVE_URL + listID + MyUrl.PLAY_SONG_LIST_BOTTOM_URL,
+        NetTool.getInstance().startRequset(MyUrl.PLAY_SONG_LIST_HEAD_URL + listID + MyUrl.PLAY_SONG_LIST_FOOT_URL,
                 PlaySongListBean.class, new CallBack<PlaySongListBean>() {
                     @Override
                     public void onSucced(PlaySongListBean response) {
-                        Glide.with(getActivity()).load(response.getPic_w700()).into(ivPlayBackground);
-                        Glide.with(getActivity()).load(response.getPic_300()).into(ivCenter);
+                        playSongListBean = response;
+                        //转换成Bitmap
+                        SimpleTarget target = new SimpleTarget<Bitmap>() {
+                            @Override
+                            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                //转换成模糊图
+                                Bitmap bitmap = StackBlur.blur(resource, 20, false);
+                                ivPlayBackground.setImageBitmap(bitmap);
+                            }
+                        };
+                        Glide.with(MyApp.getContext()).load(response.getPic_w700()).asBitmap().into(target);
+                        Glide.with(MyApp.getContext()).load(response.getPic_300()).into(ivCenter);
                         tvInclude.setText("标签：" + response.getTag());
                         tvTitle.setText(response.getTitle());
                         tvNumber.setText("共" + response.getContent().size() + "首歌");
 
                         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-                        playRecyclerViewAdapter = new PlayRecyclerViewAdapter(getContext());
+                        playRecyclerViewAdapter = new PlayRecyclerViewAdapter(PlaySongListFragment.this, getContext());
                         recyclerView.setAdapter(playRecyclerViewAdapter);
                         playRecyclerViewAdapter.setPlaySongListBean(response);
-
                     }
 
                     @Override
@@ -80,9 +107,11 @@ public class PlaySongListFragment extends BaseFragment implements View.OnClickLi
                 });
     }
 
+
+
     @Override
     protected void bindEvent() {
-            ivBack.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -115,6 +144,47 @@ public class PlaySongListFragment extends BaseFragment implements View.OnClickLi
                 fragmentTransaction.remove(this);
                 fragmentTransaction.commit();
                 break;
+        }
+    }
+
+    @Override
+    public void itemClick(final int inPosition) {
+        final EventONLineSongs eventONLineSongs = new EventONLineSongs();
+        if (!isClick) {
+            onLineSongBeanList = new ArrayList<>();
+            for (int i = 0; i < playSongListBean.getContent().size(); i++) {
+                String songId = playSongListBean.getContent().get(i).getSong_id();
+                NetTool.getInstance().startRequest(MyUrl.PLAY_HEAD_URL + songId + MyUrl.PLAY_FOOT_URL, new CallBack<String>() {
+                    @Override
+                    public void onSucced(String response) {
+                        String song = response.substring(1, response.length() - 2);
+
+                        Gson gson = new Gson();
+                        OnLineSongBean onLineSongBean = gson.fromJson(song, OnLineSongBean.class);
+
+                        onLineSongBeanList.add(onLineSongBean);
+                        if (onLineSongBeanList.size() == playSongListBean.getContent().size()) {
+                            eventONLineSongs.setOnLineSongBeanList(onLineSongBeanList);
+
+                            eventONLineSongs.setPostion(inPosition);
+                            EventBus.getDefault().post(eventONLineSongs);
+                            isClick = true;
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        Toast.makeText(getContext(), "网络不好，请确定联网后播放", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+
+
+        } else {
+            eventONLineSongs.setPostion(inPosition);
+            EventBus.getDefault().post(eventONLineSongs);
         }
     }
 }

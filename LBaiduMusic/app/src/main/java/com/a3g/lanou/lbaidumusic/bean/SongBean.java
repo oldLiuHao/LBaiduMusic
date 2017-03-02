@@ -1,5 +1,6 @@
 package com.a3g.lanou.lbaidumusic.bean;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -10,20 +11,25 @@ public class SongBean  implements Parcelable{
     private String songName;
     private  String singerName;
     private String url;
+    private Bitmap songImage;
+    private Long duringTime;
 
-    public SongBean(String songName, String singerName, String url) {
+    public SongBean() {
+    }
+
+    public SongBean(String songName, String singerName, String url, Bitmap songImage, Long duringTime) {
         this.songName = songName;
         this.singerName = singerName;
         this.url = url;
-    }
-
-    public SongBean() {
+        this.songImage = songImage;
+        this.duringTime = duringTime;
     }
 
     protected SongBean(Parcel in) {
         songName = in.readString();
         singerName = in.readString();
         url = in.readString();
+        songImage = in.readParcelable(Bitmap.class.getClassLoader());
     }
 
     public static final Creator<SongBean> CREATOR = new Creator<SongBean>() {
@@ -62,6 +68,22 @@ public class SongBean  implements Parcelable{
         this.url = url;
     }
 
+    public Bitmap getSongImage() {
+        return songImage;
+    }
+
+    public void setSongImage(Bitmap songImage) {
+        this.songImage = songImage;
+    }
+
+    public Long getDuringTime() {
+        return duringTime;
+    }
+
+    public void setDuringTime(Long duringTime) {
+        this.duringTime = duringTime;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -72,5 +94,8 @@ public class SongBean  implements Parcelable{
         dest.writeString(songName);
         dest.writeString(singerName);
         dest.writeString(url);
+        dest.writeParcelable(songImage, flags);
     }
+
+
 }
