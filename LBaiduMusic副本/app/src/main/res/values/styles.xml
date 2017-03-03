@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="fragment_my_login_text">
+        <item name="android:textSize">@dimen/fragment_my_login_LinerLayout_textSize</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorFragmentMyLoginText</item>
+    </style>
+    <style name = "fragment_my_my_text_second">
+        <item name="android:textSize">@dimen/fragment_my_login_LinerLayout_textSize</item>
+        <item name="android:textColor">@color/colorFragmentMymyText</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/fragment_my_mymusic_margin_left</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="fragment_my_my_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/fragment_my_mymusic_margin_left</item>
+    </style>
+    <style name="fragment_my_my_text_first">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/fragment_my_mymusic_text_margin_left</item>
+    </style>
+   <style name="fragment_my_my_image_right">
+       <item name="android:layout_width">wrap_content</item>
+       <item name="android:layout_height">wrap_content</item>
+       <item name="android:layout_alignParentRight">true</item>
+       <item name="android:layout_centerVertical">true</item>
+   </style>
+    <style name="fragment_my_collect_list">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/fragment_my_login_LinerLayout_textSize</item>
+        <item name="android:textColor">@color/colorFragmentMymyText</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+    <style name="fragment_find_live">
+        <item name="android:textColor">@color/colorfindlivetext</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/fragment_song_list_name_text_textsize</item>
+    </style>
+
+</resources>

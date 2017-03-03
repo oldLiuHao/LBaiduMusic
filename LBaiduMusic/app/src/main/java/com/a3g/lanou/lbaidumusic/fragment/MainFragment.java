@@ -7,6 +7,8 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -33,8 +35,9 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
     private FragmentMainAdapter fragmentMainAdapter;
     private List<Fragment> datas;
     private TextView tvBack;
-    private ImageView ivLogin,ivBack;
+    private ImageView ivLogin,ivBack,ivSearch;
     private DrawerLayout drawerLayout;
+    private FragmentManager fragmentManager;
     private static final String TAG = "MainFragment";
     @Override
     protected int bindLayout() {
@@ -49,10 +52,14 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
         drawerLayout = (DrawerLayout) view.findViewById(R.id.drla_main);
         ivBack = (ImageView) view.findViewById(R.id.iv_back_main);
         tvBack = (TextView) view.findViewById(R.id.tv_back_main);
+        ivSearch = (ImageView) view.findViewById(R.id.iv_search_fragment_main);
     }
 
     @Override
     protected void initData() {
+
+        fragmentManager = getActivity().getSupportFragmentManager();
+
         //把Fragment加入集合
         datas = new ArrayList<>();
 
@@ -77,6 +84,7 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
             ivLogin.setOnClickListener(this);
             ivBack.setOnClickListener(this);
             tvBack.setOnClickListener(this);
+            ivSearch.setOnClickListener(this);
     }
 
 
@@ -92,6 +100,11 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.tv_back_main :
                 drawerLayout.closeDrawer(Gravity.RIGHT);
+                break;
+            case R.id.iv_search_fragment_main:
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.add(R.id.frame_layout_main,new SearchFragment());
+                fragmentTransaction.commit();
                 break;
 
         }

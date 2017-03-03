@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/myshape"
+        >
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_k_k"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+   <TextView
+       android:textSize="@dimen/fragment_song_list_name_text_textsize"
+       android:text="@string/fragment_ktv_k_k"
+       android:gravity="center_vertical"
+
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:textColor="@color/colorFragmentMymyText"
+       />
+    </LinearLayout>
+    <com.github.jdsjlzx.recyclerview.LRecyclerView
+        android:layout_marginTop="5dp"
+        android:id="@+id/lrecycler_KTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="140dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/iv_recommend_gird_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+
+            />
+        <TextView
+            android:drawableLeft="@mipmap/ic_listen_count"
+            android:id="@+id/tv_num_recommend_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorFragmentMyLoginText"
+            android:textSize="12sp"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_title_recommend_recommend"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="12sp"
+        />
+
+</LinearLayout>

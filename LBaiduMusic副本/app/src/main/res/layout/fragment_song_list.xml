@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+
+   >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_song_list_all_height"
+        android:layout_marginLeft="@dimen/fragment_song_list_image_pull_margin_left"
+        >
+        <LinearLayout
+            android:id="@+id/lila_all_song_list"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+
+        <ImageView
+            android:src="@mipmap/bt_startpage_bg_press"
+            android:layout_width="@dimen/fragment_song_list_left_image_width"
+            android:layout_height="match_parent"
+
+            />
+        <TextView
+            android:id="@+id/tv_all_song_list_fragment"
+            android:text="@string/fragment_song_list_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/fragment_song_list_text_all_margin_left"
+            />
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fragment_song_list_image_pull_margin_left"
+            android:src="@mipmap/bt_mv_pull_down_normal"
+            />
+        </LinearLayout>
+        <TextView
+            android:text="@string/fragment_song_list_new"
+            android:id="@+id/tv_new_song_list"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/fragment_song_list_hot_text_width"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+
+            />
+
+        <TextView
+            android:textColor="@color/colorIncludeBackground"
+            android:text="@string/fragment_song_list_hot"
+            android:id="@+id/tv_hot_song_list"
+            android:layout_toLeftOf="@id/tv_new_song_list"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/fragment_song_list_hot_text_width"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+
+            />
+
+
+    </RelativeLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srp_songlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_home_song_list_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

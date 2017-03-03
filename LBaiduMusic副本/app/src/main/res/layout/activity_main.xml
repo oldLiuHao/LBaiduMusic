@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.a3g.lanou.lbaidumusic.activity.MainActivity"
+    >
+
+    <FrameLayout
+        android:id="@+id/frame_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_main_player_height"
+        android:background="#f0f1efef"
+        >
+
+
+        <ImageView
+            android:src="@mipmap/img_minibar_default"
+            android:id="@+id/iv_icon_main"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:scaleType="fitXY"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/lila_play_main"
+            android:layout_weight="12"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_main_player_text_padding"
+            android:paddingRight="@dimen/activity_main_player_text_paddingright"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="百度音乐 听到极致"
+                android:id="@+id/tv_song_name_main"
+                android:layout_marginTop="@dimen/activity_main_player_text_padding"
+                android:layout_marginLeft="@dimen/activity_main_player_text_padding"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_main_player_text_height" />
+
+            <TextView
+                android:id="@+id/tv_singer_name_main"
+                android:layout_marginLeft="@dimen/activity_main_player_text_padding"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_main_player_text_height" />
+
+        </LinearLayout>
+        <ImageView
+            android:src="@mipmap/bt_minibar_play_normal"
+            android:id="@+id/iv_play_main"
+            android:layout_weight="3.05"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            />
+        <ImageView
+            android:id="@+id/iv_next_main"
+            android:src="@mipmap/bt_minibar_next_normal"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            />
+        <ImageView
+            android:id="@+id/iv_menu_main"
+            android:src="@mipmap/bt_minibar_playinglist_normal"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            />
+
+    </LinearLayout>
+    <ProgressBar
+        android:layout_alignParentBottom="true"
+        android:id="@+id/pb_main"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+</RelativeLayout>

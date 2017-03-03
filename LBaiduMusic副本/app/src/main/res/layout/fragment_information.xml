@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        >
+        <ImageView
+            android:id="@+id/iv_information_play"
+            android:layout_marginLeft="20dp"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            />
+        <TextView
+            android:id="@+id/tv_author_information"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/iv_information_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            />
+        <TextView
+            android:id="@+id/tv_name_information"
+            android:layout_alignBottom="@id/iv_information_play"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/iv_information_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="歌曲暂无推荐信息"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        />
+
+
+
+</LinearLayout>

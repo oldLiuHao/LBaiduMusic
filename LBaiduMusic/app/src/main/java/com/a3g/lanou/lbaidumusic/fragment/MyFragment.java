@@ -54,9 +54,9 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
     @Override
     protected void initData() {
         songBeen = new ArrayList<>();
-        //获取本地歌曲数量
-        getMusicData();
-        tvMyMusicNumber.setText(songBeen.size()+"首");
+//        //获取本地歌曲数量
+//        getMusicData();
+//        tvMyMusicNumber.setText(songBeen.size()+"首");
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tvLoginBottom.getText().toString());
         ForegroundColorSpan buleSpan = new ForegroundColorSpan(Color.parseColor("#20ACFE"));
         spannableStringBuilder.setSpan(buleSpan,0,4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

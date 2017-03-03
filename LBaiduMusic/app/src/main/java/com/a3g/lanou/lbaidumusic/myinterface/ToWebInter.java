@@ -6,4 +6,5 @@ package com.a3g.lanou.lbaidumusic.myinterface;
 public interface ToWebInter {
     String getUrl();
     String getWebTitle();
+
 }

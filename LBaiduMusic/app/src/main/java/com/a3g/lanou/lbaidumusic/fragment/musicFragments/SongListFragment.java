@@ -1,12 +1,12 @@
 package com.a3g.lanou.lbaidumusic.fragment.musicFragments;
 
 import android.app.ActionBar;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -15,7 +15,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.a3g.lanou.lbaidumusic.MyApp;
 import com.a3g.lanou.lbaidumusic.R;
 import com.a3g.lanou.lbaidumusic.adapter.SongListAllRvAdtpter;
 import com.a3g.lanou.lbaidumusic.adapter.SonglistHomeRvAdapter;
@@ -24,7 +26,6 @@ import com.a3g.lanou.lbaidumusic.bean.SongListHotBean;
 import com.a3g.lanou.lbaidumusic.fragment.BaseFragment;
 import com.a3g.lanou.lbaidumusic.myinterface.CallBack;
 import com.a3g.lanou.lbaidumusic.myinterface.RecyclerItemClickListener;
-import com.a3g.lanou.lbaidumusic.tools.MyBean;
 import com.a3g.lanou.lbaidumusic.tools.MyUrl;
 import com.a3g.lanou.lbaidumusic.tools.NetTool;
 
@@ -46,6 +47,13 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
     private RecyclerView rvPopupAll;
     private TextView tvHotSongList, tvNewSongList, tvAllSongList;
     private FragmentManager fragmentManager;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private SongListHotBean songListHotBean;
+    private int lastVisibleItem = 0;
+    private final int HOT_PAGE=0;
+    private final int NEW_PAGE=1;
+    private int pageType;
+    private LinearLayoutManager linearLayoutManager;
 
     @Override
     protected int bindLayout() {
@@ -59,6 +67,7 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
         tvHotSongList = (TextView) view.findViewById(R.id.tv_hot_song_list);
         tvNewSongList = (TextView) view.findViewById(R.id.tv_new_song_list);
         tvAllSongList = (TextView) view.findViewById(R.id.tv_all_song_list_fragment);
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srp_songlist);
 
     }
 
@@ -81,30 +90,71 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
     @Override
     protected void initData() {
         fragmentManager = getActivity().getSupportFragmentManager();
+        pullToRefresh();
+
 
         songlistHomeRvAdapter = new SonglistHomeRvAdapter(SongListFragment.this);
-        rvHomeRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        rvHomeRecycler.setLayoutManager(linearLayoutManager);
         rvHomeRecycler.setAdapter(songlistHomeRvAdapter);
         hotNet();
 
 
     }
 
+    private void pullToRefresh() {
+        //设置SwipeRefreshLayout
+        //设置动画颜色
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorIncludeBackground);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                    if (pageType==HOT_PAGE){
+                        hotNet();
+
+                    }else if (pageType==NEW_PAGE){
+                        newNet();
+                    }
+            }
+        });
+    }
+
     private void hotNet() {
-        datas = new ArrayList<>();
+       
+        datas= new ArrayList<>();
         //拉取网络数据
         NetTool.getInstance().startRequset(MyUrl.SONG_LIST_HOT_URL, SongListHotBean.class, new CallBack<SongListHotBean>() {
             @Override
             public void onSucced(SongListHotBean response) {
                 datas = response.getDiyInfo();
-                songlistHomeRvAdapter.setDatas(datas);
+                if (songListHotBean!=null){
+                    int lastId = Integer.valueOf(songListHotBean.getDiyInfo().get(0).getList_id());
+                    int newId  =Integer.valueOf(datas.get(0).getList_id());
+                    if(newId==lastId){
+                        Toast.makeText(MyApp.getContext(), "已经是最新内容啦，不要在累我了", Toast.LENGTH_SHORT).show();
+                        //设置刷新成功之后动画消失
+
+                    }else {
+                        songlistHomeRvAdapter.setDatas(datas);
+                        songListHotBean = response;
+                    }
+
+
+                }else {
+
+                    songlistHomeRvAdapter.setDatas(datas);
+                    songListHotBean = response;
+                }
+
+                swipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
             public void onFailure(Throwable e) {
-
+                Toast.makeText(MyApp.getContext(), "网络不好，请稍后重试", Toast.LENGTH_LONG).show();
             }
         });
+        pageType = HOT_PAGE;
     }
 
     private void newNet() {
@@ -113,16 +163,34 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
             @Override
             public void onSucced(SongListHotBean response) {
                 datas = response.getDiyInfo();
-                songlistHomeRvAdapter.setDatas(datas);
+                if (songListHotBean!=null){
+                    int lastId = Integer.valueOf(songListHotBean.getDiyInfo().get(0).getList_id());
+                    int newId  =Integer.valueOf(datas.get(0).getList_id());
+                    if(newId==lastId){
+                        Toast.makeText(MyApp.getContext(), "已经是最新内容啦，不要在累我了", Toast.LENGTH_SHORT).show();
+                        //设置刷新成功之后动画消失
 
+                    }else {
+                        songlistHomeRvAdapter.setDatas(datas);
+                        songListHotBean = response;
+                    }
+
+
+                }else {
+
+                    songlistHomeRvAdapter.setDatas(datas);
+                    songListHotBean = response;
+                }
+
+                swipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
             public void onFailure(Throwable e) {
-
+                Toast.makeText(MyApp.getContext(), "网络不好，请稍后重试", Toast.LENGTH_LONG).show();
             }
         });
-
+        pageType =NEW_PAGE;
 
     }
 
@@ -132,6 +200,21 @@ public class SongListFragment extends BaseFragment implements View.OnClickListen
         lilaAll.setOnClickListener(this);
         tvHotSongList.setOnClickListener(this);
         tvNewSongList.setOnClickListener(this);
+        rvHomeRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItem + 1 == songlistHomeRvAdapter.getItemCount()){
+
+                }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
+            }
+        });
     }
 
     @Override

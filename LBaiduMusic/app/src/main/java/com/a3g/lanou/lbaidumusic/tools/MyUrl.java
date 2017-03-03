@@ -27,4 +27,10 @@ public class MyUrl {
     public static final String PLAY_HEAD_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?from=webapp_music&method=baidu.ting.song.play&format=json&callback=&songid=";
     public static final String PLAY_FOOT_URL = "&_=1413017198449";
 
+
+    public static final String SEARCH_HEAD_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.search.merge&query=";
+    public static final String SEARCH_FOOT_URL = "&page_size=50&page_no=1&type=-1&format=json&from=ios&version=5.2.5&from=ios&channel=appstore";
+
+
+
 }

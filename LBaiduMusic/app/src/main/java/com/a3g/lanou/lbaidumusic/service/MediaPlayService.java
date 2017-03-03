@@ -94,7 +94,7 @@ public class MediaPlayService extends Service {
 
         });
         //获取音乐
-        getMusicData();
+//        getMusicData();
     }
 
     private void getMusicData() {

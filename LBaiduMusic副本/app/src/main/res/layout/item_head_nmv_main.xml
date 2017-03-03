@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="150dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        >
+        <ImageView
+            android:id="@+id/iv_user_login"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/img_option_setting_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_user_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="立即登录"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorFragmentMymyText"
+                android:textSize="@dimen/fragment_my_login_LinerLayout_textSize"
+                android:text="登录后自动为您同步歌曲"
+                android:layout_marginTop="5dp"
+                />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:src="@mipmap/bt_option_setting_sign_in_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+</LinearLayout>
