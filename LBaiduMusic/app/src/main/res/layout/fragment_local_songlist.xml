@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorFragmentMyLoginText"
-    android:paddingLeft="10dp"
+    android:paddingLeft="@dimen/dp_10"
     >
     <ListView
         android:id="@+id/list_songlist_local"

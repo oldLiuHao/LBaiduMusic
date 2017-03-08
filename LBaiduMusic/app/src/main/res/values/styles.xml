@@ -54,5 +54,8 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/fragment_song_list_name_text_textsize</item>
     </style>
-
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorIncludeBackground</item>
+        <item name="colorControlActivated">@color/colorIncludeBackground</item>
+    </style>
 </resources>

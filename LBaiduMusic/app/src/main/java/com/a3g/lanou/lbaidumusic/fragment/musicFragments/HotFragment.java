@@ -1,7 +1,10 @@
 package com.a3g.lanou.lbaidumusic.fragment.musicFragments;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.a3g.lanou.lbaidumusic.R;
@@ -18,6 +21,9 @@ import com.a3g.lanou.lbaidumusic.tools.NetTool;
 public class HotFragment extends BaseFragment {
     private ListView listHot;
     private HotListAdapter hotListAdapter;
+    private HotListBean hotListBean;
+    private FragmentManager fragmentManager;
+    private HotListBean.ContentBeanX contentBean;
     @Override
     protected int bindLayout() {
         return R.layout.fragment_hot;
@@ -30,6 +36,7 @@ public class HotFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        fragmentManager = getActivity().getSupportFragmentManager();
         hotListAdapter = new HotListAdapter(getContext());
         listHot.setAdapter(hotListAdapter);
         HotNet();
@@ -40,6 +47,7 @@ public class HotFragment extends BaseFragment {
             @Override
             public void onSucced(HotListBean response) {
                 hotListAdapter.setHotListBean(response);
+                hotListBean = response;
             }
 
             @Override
@@ -51,7 +59,16 @@ public class HotFragment extends BaseFragment {
 
     @Override
     protected void bindEvent() {
+        listHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                contentBean = hotListBean.getContent().get(position);
+                fragmentTransaction.add(R.id.frame_layout_main,HotPlaySongListFragment.newInstance(contentBean));
+                fragmentTransaction.commit();
 
+            }
+        });
     }
 
 

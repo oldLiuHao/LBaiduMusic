@@ -13,6 +13,7 @@ public class SongBean  implements Parcelable{
     private String url;
     private Bitmap songImage;
     private Long duringTime;
+    private String id;
 
     public SongBean() {
     }
@@ -25,11 +26,21 @@ public class SongBean  implements Parcelable{
         this.duringTime = duringTime;
     }
 
+    public SongBean(String songName, String singerName, String url, Bitmap songImage, Long duringTime, String id) {
+        this.songName = songName;
+        this.singerName = singerName;
+        this.url = url;
+        this.songImage = songImage;
+        this.duringTime = duringTime;
+        this.id = id;
+    }
+
     protected SongBean(Parcel in) {
         songName = in.readString();
         singerName = in.readString();
         url = in.readString();
         songImage = in.readParcelable(Bitmap.class.getClassLoader());
+        id = in.readString();
     }
 
     public static final Creator<SongBean> CREATOR = new Creator<SongBean>() {
@@ -84,6 +95,14 @@ public class SongBean  implements Parcelable{
         this.duringTime = duringTime;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -95,7 +114,6 @@ public class SongBean  implements Parcelable{
         dest.writeString(singerName);
         dest.writeString(url);
         dest.writeParcelable(songImage, flags);
+        dest.writeString(id);
     }
-
-
 }

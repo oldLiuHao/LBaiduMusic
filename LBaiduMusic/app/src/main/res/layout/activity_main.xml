@@ -7,7 +7,7 @@
     tools:context="com.a3g.lanou.lbaidumusic.activity.MainActivity"
     >
 
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/frame_layout_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -80,10 +80,12 @@
 
     </LinearLayout>
     <ProgressBar
+       android:progressDrawable="@drawable/seekbar"
+        android:backgroundTint="@color/colorIncludeBackground"
         android:layout_alignParentBottom="true"
         android:id="@+id/pb_main"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="2dp"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         />
 </RelativeLayout>

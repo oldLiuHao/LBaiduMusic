@@ -7,16 +7,16 @@
     <ImageView
         android:id="@+id/iv_first_ktv"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/DP_70"
         android:scaleType="fitXY"
         />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/dp_60"
         android:background="@color/colorktvbackground"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="@dimen/DP_15"
             android:src="@mipmap/icon_my_ktv" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/dp_6"
             android:layout_toRightOf="@id/iv_my_ktv" />
 
         <ImageView
@@ -44,76 +44,76 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="@dimen/DP_15"
             android:src="@mipmap/icon_to_my_ktv" />
         </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:paddingTop="10dp"
+        android:layout_height="@dimen/DP_110"
+        android:paddingTop="@dimen/dp_10"
         >
 
         <LinearLayout
             android:id="@+id/lila_chinese_ktv"
-            android:layout_width="70dp"
+            android:layout_width="@dimen/DP_70"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/DP_70"
                 android:src="@mipmap/img_k_chinese" />
 
             <TextView
                 android:gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="@dimen/DP_25"
                 android:layout_marginTop="5dp"
                 android:text="@string/fragment_ktv_chinese" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lila_hot_ktv"
-            android:layout_width="70dp"
+            android:layout_width="@dimen/DP_70"
             android:layout_height="match_parent"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="@dimen/dp_40"
             android:layout_toLeftOf="@id/lila_chinese_ktv"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/DP_70"
                 android:src="@mipmap/img_k_ktv" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="@dimen/DP_25"
+                android:layout_marginTop="@dimen/dp_6"
                 android:text="@string/fragment_ktv_ktv_hot"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lila_europe_ktv"
-            android:layout_width="70dp"
+            android:layout_width="@dimen/DP_70"
             android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="@dimen/dp_40"
             android:layout_toRightOf="@id/lila_chinese_ktv"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/DP_70"
                 android:src="@mipmap/img_k_occident" />
 
             <TextView
                 android:gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="@dimen/DP_25"
+                android:layout_marginTop="@dimen/dp_6"
                 android:text="@string/fragment_ktv_europe"
                 />
         </LinearLayout>
@@ -122,25 +122,25 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:paddingBottom="10dp"
+        android:layout_height="@dimen/DP_110"
+        android:paddingBottom="@dimen/dp_10"
         >
 
         <LinearLayout
             android:id="@+id/lila_women_ktv"
-            android:layout_width="70dp"
+            android:layout_width="@dimen/DP_70"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/DP_70"
                 android:src="@mipmap/img_k_woman" />
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="@dimen/DP_25"
+                android:layout_marginTop="@dimen/dp_6"
                 android:text="@string/fragment_ktv_women_singer"
                 android:gravity="center_horizontal"
                 />
@@ -148,21 +148,21 @@
 
         <LinearLayout
             android:id="@+id/lila_man_ktv"
-            android:layout_width="70dp"
+            android:layout_width="@dimen/DP_70"
             android:layout_height="match_parent"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="@dimen/dp_40"
             android:layout_toLeftOf="@id/lila_women_ktv"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/DP_70"
                 android:src="@mipmap/img_k_man" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="@dimen/DP_25"
+                android:layout_marginTop="@dimen/dp_6"
                 android:text="@string/fragment_ktv_man_singer"
                 android:gravity="center_horizontal"
                 />
@@ -170,21 +170,21 @@
 
         <LinearLayout
             android:id="@+id/lila_bind_ktv"
-            android:layout_width="70dp"
+            android:layout_width="@dimen/DP_70"
             android:layout_height="match_parent"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="@dimen/DP_50"
             android:layout_toRightOf="@id/lila_women_ktv"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/DP_70"
                 android:src="@mipmap/img_k_band" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_height="@dimen/DP_25"
+                android:layout_marginTop="@dimen/dp_6"
                 android:text="@string/fragment_ktv_band"
                 android:gravity="center"
                 />
@@ -195,19 +195,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/dp_60"
         android:orientation="horizontal"
-        android:paddingTop="10dp"
+        android:paddingTop="@dimen/dp_10"
         >
         <ImageView
             android:src="@mipmap/bt_startpage_bg_press"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_gravity="center_vertical"
-            android:layout_width="5dp"
+            android:layout_width="@dimen/dp_6"
             android:layout_height="wrap_content" />
         <TextView
             android:text="大家都在唱"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/dp_6"
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

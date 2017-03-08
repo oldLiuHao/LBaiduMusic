@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/iv_shop_find"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/DP_20"
+            android:layout_height="@dimen/DP_20"
             android:layout_centerVertical="true"
             android:src="@mipmap/find_shop" />
 
@@ -23,7 +23,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:drawableRight="@mipmap/btn_more_left_arrow_nor"
-            android:text="更多"
+            android:text="@string/more"
             android:textColor="@color/colorFragmentMymyText"
             android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/iv_shop_find"
-            android:text="商城" />
+            android:text="@string/shop" />
 
 
     </RelativeLayout>
@@ -58,15 +58,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_shop_first_find"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="@dimen/dp_10" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="@dimen/DP_20"
+            android:layout_marginRight="@dimen/DP_20"
             android:layout_weight="1">
 
             <ImageView
@@ -75,12 +75,12 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:textSize="13sp"
+                android:textSize="@dimen/sp_12"
                 android:id="@+id/tv_shop_second_find"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_shop_second_find"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="@dimen/dp_10" />
 
         </RelativeLayout>
 
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/iv_shop_third_find"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="@dimen/dp_10" />
 
         </RelativeLayout>
 
@@ -113,8 +113,8 @@
 
         <ImageView
             android:id="@+id/iv_live_find"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/DP_20"
+            android:layout_height="@dimen/DP_20"
             android:layout_centerVertical="true"
             android:src="@mipmap/live" />
 
@@ -125,7 +125,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:drawableRight="@mipmap/btn_more_left_arrow_nor"
-            android:text="更多"
+            android:text="@string/more"
             android:textColor="@color/colorFragmentMymyText"
             android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
 
@@ -135,15 +135,15 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/iv_live_find"
-            android:text="直播" />
+            android:text="@string/live" />
 
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="@dimen/DP_50"
+
         android:orientation="horizontal">
 
         <TextView
@@ -151,7 +151,7 @@
             android:text="女神"
             style="@style/fragment_find_live"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@mipmap/god" />
 
@@ -160,7 +160,7 @@
             android:text="好声音"
 
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:background="@mipmap/good_voice" />
@@ -169,7 +169,7 @@
             android:text="劲爆"
             style="@style/fragment_find_live"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:background="@mipmap/hot" />
@@ -178,7 +178,7 @@
             style="@style/fragment_find_live"
             android:text="萌妹"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:background="@mipmap/sister" />
@@ -187,7 +187,7 @@
             style="@style/fragment_find_live"
             android:text="推荐"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:background="@mipmap/recommend" />

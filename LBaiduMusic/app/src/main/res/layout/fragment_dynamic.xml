@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
     <include layout="@layout/include_title"/>
     <TextView
-        android:text="动态"
-        android:layout_marginTop="60dp"
-        android:textSize="50sp"
+        android:text="@string/active"
+        android:layout_marginTop="@dimen/dp_60"
+        android:textSize="@dimen/SP_50"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

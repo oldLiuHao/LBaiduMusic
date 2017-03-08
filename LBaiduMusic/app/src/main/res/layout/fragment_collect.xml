@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFragmentMyLoginText"
+    >
+
+    <LinearLayout
+        android:id="@+id/lila_collect"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DP_100"
+        android:background="@color/backgroundHuise"
+        >
+        <ImageView
+            android:src="@mipmap/ic_search_down"
+            android:id="@+id/iv_three_collect"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            />
+        <ImageView
+            android:src="@mipmap/ic_search_down"
+            android:id="@+id/iv_two_collect"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:src="@mipmap/ic_search_down"
+            android:id="@+id/iv_one_collect"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <RelativeLayout
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DP_100">
+        <ImageView
+            android:id="@+id/iv_back_collect"
+            android:layout_marginTop="@dimen/dp_6"
+            android:src="@mipmap/ic_back_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            >
+            <TextView
+                android:layout_marginLeft="@dimen/dp_6"
+                android:textColor="@color/colorFragmentMyLoginText"
+                android:textSize="@dimen/SP_20"
+                android:text="@string/fragment_my_favorite_above"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginRight="@dimen/dp_10"
+                android:src="@mipmap/bt_playall_normal"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <ListView
+        android:layout_below="@id/lila_collect"
+        android:id="@+id/list_collect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+
+</RelativeLayout>

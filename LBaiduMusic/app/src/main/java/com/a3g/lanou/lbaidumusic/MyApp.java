@@ -9,6 +9,8 @@ import android.content.Context;
 public class MyApp extends Application {
 
     private static Context context;
+    private static DaoMaster daoMaster;
+    private static DaoSession daoSession;
 
     @Override
     public void onCreate() {
@@ -18,5 +20,21 @@ public class MyApp extends Application {
 
     public static Context getContext() {
         return context;
+    }
+
+    public static DaoMaster getDaoMaster() {
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(getContext(),"MusicCollect.db",null);
+        daoMaster = new DaoMaster(helper.getWritableDb());
+        return daoMaster;
+    }
+
+    public static DaoSession getDaoSession() {
+        if (daoMaster==null){
+            if (daoSession==null){
+                daoMaster = getDaoMaster();
+            }
+        }
+        daoSession = daoMaster.newSession();
+        return daoSession;
     }
 }

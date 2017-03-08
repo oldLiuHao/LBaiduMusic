@@ -17,15 +17,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
+            style="@style/MyEditText"
             android:id="@+id/et_search"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/DP_40"
             android:background="@color/colorFragmentMyLoginText"
-            android:hint="   歌曲，歌手，歌词，朋友，话题"
-            android:textSize="15sp"
+            android:hint="@string/search"
+            android:textSize="@dimen/SP_15"
             />
         <ImageView
             android:id="@+id/iv_search_search"
@@ -49,22 +50,22 @@
         android:orientation="vertical"
         >
     <TextView
-        android:paddingLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:paddingLeft="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_6"
         android:layout_width="match_parent"
         android:layout_height="@dimen/fragment_main_tab_height"
-        android:text="热门搜索"
+        android:text="@string/hotSearch"
         android:gravity="center_vertical"
-        android:textSize="16sp"
+        android:textSize="@dimen/SP_15"
        />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:paddingLeft="5dp"
+        android:layout_height="@dimen/DP_30"
+        android:paddingLeft="@dimen/dp_6"
         >
         <TextView
             android:background="@drawable/hot_search_select"
-            android:textSize="16sp"
+            android:textSize="@dimen/SP_15"
             android:gravity="center"
             android:textColor="@color/colorIncludeBackground"
             android:text="儿歌"

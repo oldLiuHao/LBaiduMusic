@@ -4,19 +4,19 @@
     android:layout_height="match_parent"
    >
     <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_marginLeft="@dimen/dp_6"
+        android:layout_marginRight="@dimen/dp_6"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/DP_30"
         android:orientation="horizontal"
         android:background="@drawable/myshape"
         >
         <ImageView
             android:layout_gravity="center_vertical"
             android:src="@mipmap/ic_k_k"
-            android:layout_width="15dp"
-            android:layout_height="15dp" />
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_14" />
    <TextView
        android:textSize="@dimen/fragment_song_list_name_text_textsize"
        android:text="@string/fragment_ktv_k_k"
@@ -28,7 +28,7 @@
        />
     </LinearLayout>
     <com.github.jdsjlzx.recyclerview.LRecyclerView
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/dp_6"
         android:id="@+id/lrecycler_KTV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="@dimen/DP_64"
+    android:background="@color/colorDefaultTextView"
+    >
+
+    <ImageView
+        android:id="@+id/iv_icon_notification"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dp_10"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/tv_name_notification"
+            android:textColor="@color/colorFragmentMyLoginText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_author_notification"
+            android:textSize="@dimen/fragment_my_login_LinerLayout_textSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorFragmentMyLoginText"
+            />
+
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_last_notification"
+        android:src="@mipmap/bt_playpage_button_previous_press"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/iv_play_notification"
+        android:src="@mipmap/bt_playpage_button_pause_normal_new"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/iv_next_notification"
+        android:src="@mipmap/bt_playpage_button_next_press"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

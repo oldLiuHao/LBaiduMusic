@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_main_tab_height"
+        android:background="@color/colorIncludeBackground"
+        >
+        <ImageView
+            android:src="@mipmap/ic_back_normal"
+            android:id="@+id/iv_back_login_activity"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/colorFragmentMyLoginText"
+            android:gravity="center"
+            android:textSize="@dimen/SP_20"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/login"
+            />
+    <TextView
+        android:layout_marginRight="@dimen/dp_10"
+        android:textColor="@color/colorFragmentMyLoginText"
+        android:text="@string/regist"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <EditText
+
+
+        android:paddingLeft="@dimen/fragment_my_login_LinerLayout_optional_margin_bottom"
+        android:layout_marginTop="@dimen/DP_100"
+        android:textColorHint="@color/colorFragmentMymyText"
+        android:hint="@string/inphonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DP_40"
+        android:background="@color/colorFragmentMyLoginText"
+        android:textCursorDrawable="@drawable/my_editext"
+        />
+    <EditText
+
+        android:paddingLeft="@dimen/fragment_my_login_LinerLayout_optional_margin_bottom"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColorHint="@color/colorFragmentMymyText"
+        android:hint="@string/inpassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:background="@color/colorFragmentMyLoginText"
+        android:textCursorDrawable="@drawable/my_editext" />
+    <Button
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/colorFragmentMyLoginText"
+        android:background="@color/colorIncludeBackground"
+        android:text="@string/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="@color/colorIncludeBackground"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/third_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DP_100"
+        android:layout_marginTop="@dimen/DP_30"
+        >
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_qq"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/bt_share_qq_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="QQ"
+                android:layout_below="@id/iv_qq"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_weixin"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/bt_share_wechat_press"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/weChat"
+                android:layout_below="@id/iv_weixin"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_weibo"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/bt_share_sinaweibo_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="@string/sina"
+                android:layout_below="@id/iv_weibo"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

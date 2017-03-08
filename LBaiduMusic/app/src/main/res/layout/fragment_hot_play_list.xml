@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFragmentMyLoginText"
+    >
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DP_290">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctl__hot_play_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:expandedTitleGravity="right|bottom"
+            >
+            <ImageView
+                android:id="@+id/iv_background_hot_playlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DP_100"
+                app:layout_collapseMode="pin"
+                android:id="@+id/toolbar">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dp_10"
+
+                    >
+                    <ImageView
+                        android:id="@+id/iv_back_hot_play_list"
+                        android:src="@mipmap/ic_back_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:textSize="@dimen/SP_20"
+                        android:id="@+id/tv_title_play_song_list"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/colorFragmentMyLoginText"
+                        android:maxLines="1"
+                        android:layout_marginRight="@dimen/DP_20"
+                        />
+
+                    <ImageView
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:layout_marginRight="@dimen/DP_20"
+                        android:src="@mipmap/bt_titlebar_setting_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DP_50"
+                android:orientation="horizontal"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:background="@color/colorFragmentMyLoginText"
+                android:layout_marginTop="@dimen/DP_240"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                >
+                <ImageView
+
+                    android:src="@mipmap/ic_listmore_play_normal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="@dimen/DP_30"
+                    android:layout_height="@dimen/DP_30" />
+
+                <TextView
+                   android:gravity="center_vertical"
+                    android:text="@string/playAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView" />
+
+                <TextView
+                    android:textColor="@color/colorFragmentMymyText"
+                    android:textSize="@dimen/fragment_my_login_LinerLayout_textSize"
+                    android:id="@+id/tv_song_number_hot_play_list"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+
+                <ImageView
+
+                    android:src="@mipmap/ic_download_normal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="@dimen/DP_20"
+                    android:layout_height="@dimen/DP_20" />
+                <TextView
+                    android:gravity="center_vertical"
+                    android:text="@string/download"
+                    android:layout_gravity="center"
+
+                    android:textColor="@color/colorFragmentMymyText"
+                    android:textSize="@dimen/fragment_my_login_LinerLayout_textSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginLeft="@dimen/dp_10"
+        android:id="@+id/recyler_hot_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="@dimen/fragment_main_tab_height"
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>

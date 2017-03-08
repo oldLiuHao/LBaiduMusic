@@ -49,8 +49,8 @@ public class MediaPlayService extends Service {
         //初始化音乐信息集合
         songBeen = new ArrayList<>();
         onLineSongBeanList = new ArrayList<>();
-        //设置对mediaPlayer完成播放的监听
 
+        //设置对mediaPlayer完成播放的监听
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -93,8 +93,8 @@ public class MediaPlayService extends Service {
 
 
         });
-        //获取音乐
-//        getMusicData();
+//        获取音乐
+        getMusicData();
     }
 
     private void getMusicData() {

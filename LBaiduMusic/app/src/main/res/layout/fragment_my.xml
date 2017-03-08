@@ -26,8 +26,9 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_icon_my"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:src="@mipmap/bt_sceneplay_singer" />
 
                 <LinearLayout
@@ -38,15 +39,16 @@
                     >
 
                     <TextView
-
+                        android:id="@+id/tv_name_my"
                         style="@style/fragment_my_login_text"
                         android:layout_marginTop="@dimen/fragment_my_login_LinerLayout_text_margin"
                         android:text="@string/fragment_my_login_top" />
 
                     <TextView
+
                         style="@style/fragment_my_login_text"
                         android:text="@string/fragment_my_login_bottom"
-                        android:id="@+id/textView2" />
+                        android:id="@+id/tv_lose_my" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -91,7 +93,6 @@
                 android:id="@+id/tv_myMusic_my_fragment"
                 style="@style/fragment_my_my_text_first"
                 android:layout_toRightOf="@id/iv_my_music_my_fragment"
-
                 android:text="@string/fragment_my_mymusic" />
 
             <TextView
@@ -195,6 +196,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rela_collect_my"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2">
@@ -295,6 +297,15 @@
                 android:text="@string/fragment_my_login_parent_bottom"
                 android:textColor="@color/colorFragmentMymyText"
                 />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_collect_lose_my"
+                android:text="碰到喜欢的内容，收藏一下就不会丢死啦"
+                android:textColor="@color/colorFragmentMymyText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/fragment_my_login_liner_bottom_margin_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
         </RelativeLayout>

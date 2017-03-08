@@ -87,6 +87,7 @@ public class SongListAllRvAdtpter extends RecyclerView.Adapter<RecyclerView.View
             ElseHolder elseHolder = (ElseHolder) holder;
             elseHolder.textView.setText(datas.get(position - 1).getFirst());
             elseHolder.recyclerView.setLayoutManager(new GridLayoutManager(context, 3, LinearLayoutManager.VERTICAL, false));
+
             songListAllItemRvAdapter = new SongListAllItemRvAdapter(songListFragment);
             songListAllItemRvAdapter.setDatas(datas.get(position - 1).getSecond());
             songListAllItemRvAdapter.setOutPosition(position);

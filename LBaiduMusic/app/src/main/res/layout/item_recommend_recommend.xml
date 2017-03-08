@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="140dp">
+    android:layout_height="@dimen/DP_140">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="@dimen/DP_100">
         <ImageView
             android:id="@+id/iv_recommend_gird_recommend"
             android:layout_width="match_parent"
@@ -18,18 +18,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginLeft="@dimen/dp_6"
             android:textColor="@color/colorFragmentMyLoginText"
-            android:textSize="12sp"
+            android:textSize="@dimen/sp_12"
             />
 
     </RelativeLayout>
     <TextView
         android:id="@+id/tv_title_recommend_recommend"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:textSize="12sp"
+        android:layout_height="@dimen/DP_30"
+        android:textSize="@dimen/sp_12"
         />
 
 </LinearLayout>

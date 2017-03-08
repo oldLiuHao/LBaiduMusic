@@ -13,12 +13,12 @@
             android:id="@+id/vp_activity_play"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#82c2c1c1"
+            android:background="@color/huise"
             />
         <ImageView
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/dp_10"
             android:id="@+id/iv_back_play_activity"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/dp_10"
             android:src="@mipmap/bt_playpage_button_return_normal_new"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -28,9 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:background="#abb4b3b3"
+        android:background="@color/huise"
         >
         <ImageView
+            android:id="@+id/iv_collect_play"
             android:src="@mipmap/bt_playpage_button_like_normal_new"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -41,6 +42,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_share_play"
             android:src="@mipmap/bt_playpage_button_share_normal_new"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -64,14 +66,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:background="#abb4b3b3"
+        android:background="@color/huise"
         >
         <TextView
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/dp_10"
             android:text="00:00"
             android:id="@+id/tv_time_now"
             android:gravity="center_vertical"
-            android:layout_width="50dp"
+            android:layout_width="@dimen/DP_50"
             android:layout_height="match_parent" />
 
         <android.support.v7.widget.AppCompatSeekBar
@@ -100,7 +102,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#abb4b3b3"
+        android:background="@color/huise"
         >
         <ImageView
             android:id="@+id/iv_mode_play"

@@ -1,5 +1,8 @@
 package com.a3g.lanou.lbaidumusic.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -31,7 +34,7 @@ public class HotListBean {
         this.content = content;
     }
 
-    public static class ContentBeanX {
+    public static class ContentBeanX implements Parcelable{
         /**
          * name : 新歌榜
          * type : 1
@@ -59,6 +62,32 @@ public class HotListBean {
         private String pic_s328;
         private String pic_s640;
         private List<ContentBean> content;
+
+        protected ContentBeanX(Parcel in) {
+            name = in.readString();
+            type = in.readInt();
+            count = in.readInt();
+            comment = in.readString();
+            web_url = in.readString();
+            pic_s192 = in.readString();
+            pic_s444 = in.readString();
+            pic_s260 = in.readString();
+            pic_s210 = in.readString();
+            pic_s328 = in.readString();
+            pic_s640 = in.readString();
+        }
+
+        public static final Creator<ContentBeanX> CREATOR = new Creator<ContentBeanX>() {
+            @Override
+            public ContentBeanX createFromParcel(Parcel in) {
+                return new ContentBeanX(in);
+            }
+
+            @Override
+            public ContentBeanX[] newArray(int size) {
+                return new ContentBeanX[size];
+            }
+        };
 
         public String getName() {
             return name;
@@ -156,7 +185,27 @@ public class HotListBean {
             this.content = content;
         }
 
-        public static class ContentBean {
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(name);
+            dest.writeInt(type);
+            dest.writeInt(count);
+            dest.writeString(comment);
+            dest.writeString(web_url);
+            dest.writeString(pic_s192);
+            dest.writeString(pic_s444);
+            dest.writeString(pic_s260);
+            dest.writeString(pic_s210);
+            dest.writeString(pic_s328);
+            dest.writeString(pic_s640);
+        }
+
+        public static class ContentBean implements Parcelable{
             /**
              * title : 满城烟花
              * author : 毛阿敏,张杰
@@ -174,6 +223,28 @@ public class HotListBean {
             private String album_title;
             private String rank_change;
             private String all_rate;
+
+            protected ContentBean(Parcel in) {
+                title = in.readString();
+                author = in.readString();
+                song_id = in.readString();
+                album_id = in.readString();
+                album_title = in.readString();
+                rank_change = in.readString();
+                all_rate = in.readString();
+            }
+
+            public static final Creator<ContentBean> CREATOR = new Creator<ContentBean>() {
+                @Override
+                public ContentBean createFromParcel(Parcel in) {
+                    return new ContentBean(in);
+                }
+
+                @Override
+                public ContentBean[] newArray(int size) {
+                    return new ContentBean[size];
+                }
+            };
 
             public String getTitle() {
                 return title;
@@ -229,6 +300,22 @@ public class HotListBean {
 
             public void setAll_rate(String all_rate) {
                 this.all_rate = all_rate;
+            }
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeString(title);
+                dest.writeString(author);
+                dest.writeString(song_id);
+                dest.writeString(album_id);
+                dest.writeString(album_title);
+                dest.writeString(rank_change);
+                dest.writeString(all_rate);
             }
         }
     }

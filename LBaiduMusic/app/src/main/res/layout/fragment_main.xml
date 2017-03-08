@@ -68,11 +68,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="65dp"
+        android:paddingBottom="@dimen/DP_65"
         android:orientation="vertical"
-        android:layout_gravity="right"
-        android:layout_marginLeft="-65dp"
         android:background="#eceaea"
+        android:layout_gravity="right"
+        android:layout_marginLeft="@dimen/DP_065"
         >
 
         <LinearLayout
@@ -85,34 +85,35 @@
 
             <ImageView
                 android:id="@+id/iv_back_main"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/DP_20"
+                android:layout_height="@dimen/DP_20"
                 android:layout_gravity="center_vertical"
                 android:src="@mipmap/ic_back_normal" />
 
             <TextView
                 android:id="@+id/tv_back_main"
-                android:layout_width="40dp"
+                android:layout_width="@dimen/DP_40"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="更多"
+                android:text="@string/more"
                 android:textColor="@color/colorFragmentMyLoginText" />
         </LinearLayout>
 
 
         <RelativeLayout
+            android:id="@+id/rela_login_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
-                android:id="@+id/iv_user_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/iv_user_login_main"
+                android:layout_width="@dimen/DP_70"
+                android:layout_height="@dimen/DP_70"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:src="@mipmap/img_option_setting_user"
 
                 />
@@ -121,20 +122,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/iv_user_login"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@id/iv_user_login_main"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_name_login_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="立即登录" />
+                    android:text="@string/fragment_my_login_top" />
 
                 <TextView
+                    android:id="@+id/tv_level_login_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="登录后自动为您同步歌曲"
+                    android:text="@string/loginmore"
                     android:textColor="@color/colorFragmentMymyText"
                     android:textSize="@dimen/fragment_my_login_LinerLayout_textSize" />
 
@@ -153,8 +156,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_message_login"
@@ -167,9 +170,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_message_login"
-                android:text="我的消息" />
+                android:text="@string/mynews" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -184,8 +187,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20"
 
             >
 
@@ -200,9 +203,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_point_login"
-                android:text="我的消息" />
+                android:text="@string/myintegral" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -217,8 +220,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_vip_login"
@@ -231,9 +234,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_vip_login"
-                android:text="我的消息" />
+                android:text="@string/Vip" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -248,8 +251,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.02"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_invite_login"
@@ -262,9 +265,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_invite_login"
-                android:text="我的消息" />
+                android:text="@string/invite" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -279,8 +282,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_setting_login"
@@ -293,9 +296,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_setting_login"
-                android:text="我的消息" />
+                android:text="@string/set" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -310,8 +313,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_auto_close_login"
@@ -324,9 +327,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_auto_close_login"
-                android:text="我的消息" />
+                android:text="@string/setTime" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -341,8 +344,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_pc_login"
@@ -355,9 +358,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_pc_login"
-                android:text="我的消息" />
+                android:text="@string/computer" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -372,8 +375,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="@dimen/DP_20"
+            android:paddingRight="@dimen/DP_20">
 
             <ImageView
                 android:id="@+id/iv_app_login"
@@ -386,9 +389,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/iv_app_login"
-                android:text="我的消息" />
+                android:text="@string/quality" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -399,7 +402,14 @@
 
         </RelativeLayout>
 
-
+        <TextView
+            android:visibility="gone"
+            android:textColor="@color/colorIncludeBackground"
+            android:gravity="center"
+            android:id="@+id/tv_relogin_main"
+            android:text="@string/loginOut"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_main_tab_height" />
     </LinearLayout>
 
 

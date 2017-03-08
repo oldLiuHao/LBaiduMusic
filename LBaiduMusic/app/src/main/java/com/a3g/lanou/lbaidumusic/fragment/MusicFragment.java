@@ -37,6 +37,16 @@ public class MusicFragment extends BaseFragment{
     private MusicPagerAdapter musicPagerAdapter;
     private String[] tabTitles = {"推荐","歌单","榜单","视频","K歌"};
     private MainReceiver mainReceiver;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //注册广播
+        mainReceiver = new MainReceiver();
+        IntentFilter intentFilter = new IntentFilter(MyBean.TO_SONG_LIST);
+        getActivity().registerReceiver(mainReceiver, intentFilter);
+    }
+
     @Override
     protected int bindLayout() {
         return R.layout.fragment_music ;
@@ -67,10 +77,8 @@ public class MusicFragment extends BaseFragment{
         tabMusic.setupWithViewPager(vpMusic);
 
 
-        //注册广播
-        mainReceiver = new MainReceiver();
-        IntentFilter intentFilter = new IntentFilter(MyBean.TO_SONG_LIST);
-        getActivity().registerReceiver(mainReceiver, intentFilter);
+
+
     }
 
     @Override
@@ -85,10 +93,10 @@ public class MusicFragment extends BaseFragment{
             vpMusic.setCurrentItem(1);
         }
     }
+
     @Override
-    public void onDetach() {
-        super.onDetach();
+    public void onDestroy() {
+        super.onDestroy();
         getActivity().unregisterReceiver(mainReceiver);
     }
-
 }

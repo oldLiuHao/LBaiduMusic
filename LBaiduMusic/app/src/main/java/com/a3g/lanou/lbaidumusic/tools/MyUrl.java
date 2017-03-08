@@ -31,6 +31,14 @@ public class MyUrl {
     public static final String SEARCH_HEAD_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.search.merge&query=";
     public static final String SEARCH_FOOT_URL = "&page_size=50&page_no=1&type=-1&format=json&from=ios&version=5.2.5&from=ios&channel=appstore";
 
+    public static final String SHARE_HEAD_URL = "http://music.baidu.com/song/";
+    public static final String SHARE_FOOT_URL = "?share=1&fr=app_android";
+    public static final String SHARE_NULL_URL = "http://music.baidu.com/";
+
+
+    public static final String HOT_SONGLIST_PLAY_HEAD_URL = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type=";
+    public static final String HOT_SONGLIST_PLAY_FOOT_URL = "&format=json&offset=0&size=50&from=ios&fields=title,song_id,author,resource_type,havehigh,is_new,has_mv_mobile,album_title,ting_uid,album_id,charge,all_rate&version=5.2.1&from=ios&channel=appstore";
+
 
 
 }

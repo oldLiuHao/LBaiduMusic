@@ -7,11 +7,11 @@
    <ImageView
        android:layout_centerHorizontal="true"
        android:id="@+id/iv_middle_play"
-       android:layout_marginTop="60dp"
-       android:layout_width="200dp"
-       android:layout_height="200dp" />
+       android:layout_marginTop="@dimen/dp_60"
+       android:layout_width="@dimen/DP_200"
+       android:layout_height="@dimen/DP_200" />
     <TextView
-        android:textSize="20sp"
+        android:textSize="@dimen/SP_20"
         android:layout_centerHorizontal="true"
         android:id="@+id/tv_name_middle_play"
         android:layout_below="@id/iv_middle_play"
